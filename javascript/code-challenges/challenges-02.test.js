@@ -66,19 +66,52 @@ You may choose to complete this challenge using a for loop, for...in syntax, or 
 For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
 ------------------------------------------------------------------------------------------------ */
 
-const forLoopTwoToThe = (arr) => {
+const forLoopTwoToThe = (beginArr) => {
   // Solution code here...
+  let finArr = [];
+  for (let i = 0; i< beginArr.length; i++ ){
+    let numbers = beginArr[i];
+
+    let pwrTwo =  Math.pow(2,numbers);
+    finArr.push(pwrTwo);
+  }
+  return finArr;
 };
 
+let beginArr = [0,4,5];
+forLoopTwoToThe(beginArr);
+forLoopTwoToThe(beginArr).length;
+forLoopTwoToThe([-1, -2, -3]);
+forLoopTwoToThe([-1, -2, -3]).length;
+console.log(forLoopTwoToThe(beginArr));
+console.log(forLoopTwoToThe(beginArr).length);
+console.log(forLoopTwoToThe([-1, -2, -3]));
+console.log(forLoopTwoToThe([-1, -2, -3]).length);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
 Write a function named forEachTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 4, but uses forEach instead of a for loop.
 ------------------------------------------------------------------------------------------------ */
 
-const forEachTwoToThe = (arr) => {
+const forEachTwoToThe = (bArr) => {
   // Solution code here...
+  let fArr = [];
+  bArr.forEach( (a) =>{
+    let pwrDos = Math.pow(2, a);
+    fArr.push(pwrDos);
+  });
+  return fArr;
 };
+
+let bArr = [0,4,5];
+forEachTwoToThe(bArr);
+forEachTwoToThe(bArr).length;
+forEachTwoToThe([-1, -2, -3]);
+forEachTwoToThe([-1, -2, -3]).length;
+console.log(forEachTwoToThe(bArr));
+console.log(forEachTwoToThe(bArr).length);
+console.log(forEachTwoToThe([-1, -2, -3]));
+console.log(forEachTwoToThe([-1, -2, -3]).length);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -86,9 +119,20 @@ CHALLENGE 6
 Write a function named mapTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 4 and your forEachTwoToThe function from challenge 5, but uses map instead of a for loop or forEach.
 ------------------------------------------------------------------------------------------------ */
 
-const mapTwoToThe = (arr) => {
+const mapTwoToThe = (startArr) => {
   // Solution code here...
+  let finishArr = startArr.map(n => Math.pow(2,n));
+  return finishArr;
 };
+let startArr = [0,4,5];
+mapTwoToThe(startArr);
+mapTwoToThe(startArr).length;
+mapTwoToThe([-1, -2, -3]);
+mapTwoToThe([-1, -2, -3]).length;
+console.log(mapTwoToThe(startArr));
+console.log(mapTwoToThe(startArr).length);
+console.log(mapTwoToThe([-1, -2, -3]));
+console.log(mapTwoToThe([-1, -2, -3]).length);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
